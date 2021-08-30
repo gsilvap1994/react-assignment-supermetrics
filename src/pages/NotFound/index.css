@@ -1,0 +1,12 @@
+.not-found-page {
+    display: flex;
+    justify-content: center;
+    padding: 4rem;
+}
+
+.not-found-page .not-found {
+    padding: 1rem .5rem;
+    border-color: #cbcbcb;
+    background-color: #cbcbcb;
+    margin: 1rem 0;
+}

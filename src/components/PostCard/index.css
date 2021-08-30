@@ -1,0 +1,15 @@
+.post-card {
+    border: 1px solid #cbcbcb;
+    margin: 1rem 0;
+    background-color: #f2f2f2;
+}
+
+.post-card .header {
+    border-bottom: 1px solid #cbcbcb;
+    padding: .5rem 1rem;
+    font-size: .9rem;
+}
+
+.post-card .body {
+    padding: .5rem 1rem;
+}

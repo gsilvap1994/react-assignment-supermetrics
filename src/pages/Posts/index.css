@@ -1,0 +1,36 @@
+.posts-page {
+    padding: 1rem 2rem;
+    min-height: 100vh;
+}
+
+.posts-page.loading {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.posts-page .container {
+    display: flex;
+}
+
+.user-row {
+    width: 30vw;
+}
+
+.posts-row {
+    width: 70vw;
+    margin: 0 1rem
+}
+
+.posts-row .filters {
+    display: flex;
+    justify-content: space-between;
+}
+
+.empty-feedback {
+    padding: 1rem .5rem;
+    border-color: #cbcbcb;
+    background-color: #cbcbcb;
+    margin: 1rem 0;
+}

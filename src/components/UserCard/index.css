@@ -1,0 +1,30 @@
+.user-card {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem .5rem;
+    border: 2px solid #000;
+    margin: 1rem 0;
+    align-items: center;
+    background-color: #ccc;
+    max-width: 320px;
+    cursor: pointer;
+}
+
+.user-card.active {
+    background-color: #777;
+}
+
+.user-card:hover {
+    background-color: #b3b3b3;
+    color: #333;
+}
+
+.count {
+    width: 22px;
+    border-radius: 1000px;
+    background-color: #999;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

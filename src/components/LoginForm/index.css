@@ -1,0 +1,44 @@
+.card {
+    max-width: 400px;
+    width: 100%;
+    padding: 1rem;
+    margin: auto;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 1px 2px 8px 5px rgb(0 0 0 / 12%);
+    background-color: #FFF;
+}
+
+@media (max-width: 600px) {
+    .card {
+        max-width: 75vw;
+    }
+}
+
+
+.card header {
+    text-align: center;
+}
+
+
+.card form .field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: .75rem;
+    margin-left: .5rem;
+    margin-right: .5rem;
+}
+
+.card form .field label {
+    padding-bottom: 5px;
+    font-size: 1rem;
+}
+
+.card form .submit-button {
+    max-width: 80px;
+    margin-left: auto;
+}
+
+.error {
+    padding-top: 5px;
+    color: red;
+}
