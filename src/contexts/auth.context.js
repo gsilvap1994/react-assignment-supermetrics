@@ -35,7 +35,7 @@ export const AuthProvider = ({ children }) => {
             if (data.data && data.data.sl_token) {
                 setIsAuthenticated(true);
                 StorageLayer.set({ key: AUTH_TOKEN_KEY, value: data.data.sl_token })
-                return true;
+                return data.data;
             }
             return false;
         } catch (error) {

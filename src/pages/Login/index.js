@@ -21,6 +21,8 @@ const Login = () => {
             email: email
         })
 
+        console.log(response)
+
         if (response && response.sl_token) {
             return history.push('/posts');
         }
