@@ -6,12 +6,13 @@ import StorageLayer from '../services/storage.service';
 const AuthContext = createContext({});
 
 export const AuthProvider = ({ children }) => {
-
-    const [isAuthenticated, setIsAuthenticated] = useState(!!StorageLayer.get({ key: AUTH_TOKEN_KEY }));
+    const [isAuthenticated, setIsAuthenticated] = useState(
+        !!StorageLayer.get({ key: AUTH_TOKEN_KEY })
+    );
 
     async function doLogin({ name, email }) {
         const client_id = 'ju16a6m81mhid5ue1z3v2g0uh';
-        let error = { name: false, email: false };
+        const error = { name: false, email: false };
 
         if (!name) {
             error.name = true;
@@ -27,18 +28,21 @@ export const AuthProvider = ({ children }) => {
 
         try {
             const response = await api.post('/assignment/register', {
-                name, email, client_id
-            })
+                name,
+                email,
+                client_id,
+            });
 
             const { data } = response;
 
             if (data.data && data.data.sl_token) {
                 setIsAuthenticated(true);
-                StorageLayer.set({ key: AUTH_TOKEN_KEY, value: data.data.sl_token })
+                StorageLayer.set({ key: AUTH_TOKEN_KEY, value: data.data.sl_token });
                 return data.data;
             }
             return false;
         } catch (error) {
+
             return { message: 'request error' };
         }
     }
@@ -50,7 +54,9 @@ export const AuthProvider = ({ children }) => {
     }
 
     return (
-        <AuthContext.Provider value={{ isAuthenticated: isAuthenticated, doLogin, doLogout }}>
+        <AuthContext.Provider
+            value={{ isAuthenticated: isAuthenticated, doLogin, doLogout }}
+        >
             {children}
         </AuthContext.Provider>
     );
