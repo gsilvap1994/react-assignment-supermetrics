@@ -10,10 +10,10 @@ const PostCard = ({ post }) => {
     return (
         <div className="post-card">
             <div className="header">
-                {post.created_time && getFormattedDate(new Date(post.created_time))}
+                {post && post.created_time && getFormattedDate(new Date(post.created_time))}
             </div>
             <div className="body">
-                {post.message}
+                {post && post.message}
             </div>
         </div>
     )

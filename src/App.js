@@ -7,7 +7,7 @@ const App = () => {
 
 
   return (
-    <AuthProvider value={{ authenticated: true }}>
+    <AuthProvider value={{ authenticated: false }}>
       <BrowserRouter>
         <Routes />
       </BrowserRouter>
