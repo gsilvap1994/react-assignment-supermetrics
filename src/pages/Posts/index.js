@@ -29,10 +29,17 @@ const Posts = () => {
                         setPosts(sortedPosts);
                         let currentUserId = id ? id : sortedPosts[0].from_id;
                         setCurrentUser(currentUserId);
+                        console.log(response)
                         let currentUserPosts = sortedPosts.find(p => p.from_id === currentUserId);
-                        setCurrentPosts(currentUserPosts.posts);
-                        setUsers(sortedPosts.map(p => { return { id: p.from_id, name: p.from_name, posts_count: p.posts.length } }));
-                        setLoading(false)
+                        if (currentPosts.length) {
+
+                            setCurrentPosts(currentUserPosts.posts);
+                            setUsers(sortedPosts.map(p => { return { id: p.from_id, name: p.from_name, posts_count: p.posts.length } }));
+                            setLoading(false)
+                        }
+                        else {
+                            setLoading(false)
+                        }
                     }
                 }
             } catch (error) {
@@ -80,7 +87,7 @@ const Posts = () => {
         }
         fetchPosts();
 
-    }, [doLogout])
+    }, [doLogout, currentPosts])
 
     const sortPostsByDateAsc = () => {
         let postsToSort = [...currentPosts]
